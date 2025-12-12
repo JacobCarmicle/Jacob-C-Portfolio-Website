@@ -32,7 +32,7 @@ export default function AboutPage() {
                   PLAYER: JACOB C
                 </h1>
                 <p className="text-xs text-[#6c5ce7]">
-                  DEVELOPER & SOFTWARE ENGINEER
+                  SOFTWARE DEVELOPER & ENGINEER
                 </p>
               </div>
 
@@ -40,21 +40,57 @@ export default function AboutPage() {
                 <div>
                   <h2 className="text-sm text-[#ffd93d] mb-3">PLAYER BIO</h2>
                   <p className="text-xs text-[#6c5ce7] leading-relaxed mb-4">
-                    I'M A PASSIONATE DEVELOPER AND SOFTWARE ENGINEER WITH A LOVE FOR BUILDING
-                    MODERN WEB APPLICATIONS AND SOLVING COMPLEX PROBLEMS.
+                    I'M A SOFTWARE DEVELOPMENT INTERN AT LEADERSHIP REALITY, BUILDING CORE FEATURES
+                    FOR ENTERPRISE-GRADE APPLICATIONS USED BY HEALTHCARE AND LEGAL PROFESSIONALS.
+                    I WORK ACROSS FULL-STACK DEVELOPMENT, CLOUD INFRASTRUCTURE, AUTHENTICATION,
+                    AND SECURE DATA WORKFLOWS.
                   </p>
                   <p className="text-xs text-[#6c5ce7] leading-relaxed">
-                    MY JOURNEY IN SOFTWARE DEVELOPMENT STARTED WITH A CURIOSITY ABOUT HOW THINGS
-                    WORK, AND THAT CURIOSITY HAS DRIVEN ME TO CONTINUOUSLY LEARN AND IMPROVE.
-                    I ENJOY WORKING WITH MODERN TECHNOLOGIES AND CREATING SOLUTIONS THAT MAKE
-                    A DIFFERENCE.
+                    CURRENTLY PURSUING A BACHELOR OF COMPUTER SCIENCE WITH A MINOR IN ORGANIZATIONAL
+                    LEADERSHIP AT WESTERN KENTUCKY UNIVERSITY (2023-2027). I'M PASSIONATE ABOUT BUILDING
+                    SCALABLE APPLICATIONS, IMPLEMENTING SECURITY BEST PRACTICES, AND CONTINUOUSLY LEARNING
+                    NEW TECHNOLOGIES.
                   </p>
+                </div>
+
+                <div>
+                  <h2 className="text-sm text-[#ffd93d] mb-3">EXPERIENCE</h2>
+                  <div className="space-y-4 mb-4">
+                    <div className="bg-[#2d2d44] border-2 border-[#4a4a6a] p-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h3 className="text-xs text-[#00d2ff] font-bold mb-1">SOFTWARE DEVELOPMENT INTERN</h3>
+                          <p className="text-[8px] text-[#6c5ce7]">LEADERSHIP REALITY · JUL 2025 - PRESENT</p>
+                        </div>
+                        <span className="text-[8px] text-[#4a4a6a]">HYBRID</span>
+                      </div>
+                      <p className="text-[8px] text-[#6c5ce7] leading-relaxed mt-2">
+                        ENHANCED FRONT-END ARCHITECTURE OF HEALTHCARE CASE-MANAGEMENT PLATFORM USING REACT (TYPESCRIPT)
+                        AND FLUENT UI. IMPLEMENTED SECURE AUTHENTICATION FLOWS WITH AZURE AD + MSAL. DEVELOPED FEATURES
+                        INCLUDING DYNAMIC WEB-COMPONENT LOADING, GROUP-BASED RBAC, AND CENTRALIZED AUDIT LOGGING.
+                        WORKED ON FASTAPI + POSTGRESQL ATTORNEY DATABASE WITH CRUD APIS AND RATE-LIMITED SECURE ENDPOINTS.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h2 className="text-sm text-[#ffd93d] mb-3">EDUCATION</h2>
+                  <div className="bg-[#2d2d44] border-2 border-[#4a4a6a] p-4">
+                    <h3 className="text-xs text-[#00d2ff] font-bold mb-1">BACHELOR OF COMPUTER SCIENCE</h3>
+                    <p className="text-[8px] text-[#6c5ce7] mb-2">WESTERN KENTUCKY UNIVERSITY · 2023 - 2027</p>
+                    <p className="text-[8px] text-[#6c5ce7]">MINOR IN ORGANIZATIONAL LEADERSHIP</p>
+                  </div>
                 </div>
 
                 <div>
                   <h2 className="text-sm text-[#ffd93d] mb-3">SKILLS & TECHNOLOGIES</h2>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {['REACT', 'NEXT.JS', 'TYPESCRIPT', 'NODE.JS', 'MONGODB', 'POSTGRESQL', 'TAILWIND', 'GIT', 'DOCKER'].map((skill) => (
+                    {[
+                      'REACT', 'TYPESCRIPT', 'NODE.JS', 'JAVASCRIPT', 'PYTHON', 'POSTGRESQL', 
+                      'MONGODB', 'DOCKER', 'FASTAPI', 'FLUTTER', 'DART', 'FIREBASE', 
+                      'AZURE AD', 'MSAL', 'FLUENT UI', 'GIT', 'CI/CD', 'AGILE'
+                    ].map((skill) => (
                       <div key={skill} className="bg-[#2d2d44] border-2 border-[#4a4a6a] p-3 text-center">
                         <span className="text-[8px] text-[#00d2ff]">{skill}</span>
                       </div>
@@ -70,13 +106,13 @@ export default function AboutPage() {
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="mailto:your.email@example.com"
+                      href="mailto:Jacob.Carmicle@gmail.com"
                       className="arcade-button"
                     >
                       EMAIL
                     </a>
                     <a
-                      href="https://github.com"
+                      href="https://github.com/JacobCarmicle"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="arcade-button bg-[#2d2d44]"
@@ -84,7 +120,7 @@ export default function AboutPage() {
                       GITHUB
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/jacob-carmicle-79b644260"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="arcade-button bg-[#2d2d44]"
@@ -102,17 +138,17 @@ export default function AboutPage() {
             <div className="pixel-border bg-[#0f0f1e] p-4 text-center">
               <div className="text-2xl mb-2">🎮</div>
               <div className="text-xs text-[#4a4a6a] mb-1">PROJECTS</div>
-              <div className="text-sm text-[#00d2ff]">4+</div>
+              <div className="text-sm text-[#00d2ff]">6</div>
             </div>
             <div className="pixel-border bg-[#0f0f1e] p-4 text-center">
-              <div className="text-2xl mb-2">💻</div>
-              <div className="text-xs text-[#4a4a6a] mb-1">LINES OF CODE</div>
-              <div className="text-sm text-[#6c5ce7]">10K+</div>
+              <div className="text-2xl mb-2">💼</div>
+              <div className="text-xs text-[#4a4a6a] mb-1">EXPERIENCE</div>
+              <div className="text-sm text-[#6c5ce7]">6+ MOS</div>
             </div>
             <div className="pixel-border bg-[#0f0f1e] p-4 text-center">
-              <div className="text-2xl mb-2">☕</div>
-              <div className="text-xs text-[#4a4a6a] mb-1">COFFEE CUPS</div>
-              <div className="text-sm text-[#ffd93d]">∞</div>
+              <div className="text-2xl mb-2">🎓</div>
+              <div className="text-xs text-[#4a4a6a] mb-1">EDUCATION</div>
+              <div className="text-sm text-[#ffd93d]">2027</div>
             </div>
             <div className="pixel-border bg-[#0f0f1e] p-4 text-center">
               <div className="text-2xl mb-2">🏆</div>
@@ -125,5 +161,3 @@ export default function AboutPage() {
     </div>
   )
 }
-
-

@@ -96,7 +96,7 @@ export default function Home() {
           <p>© 2024 JACOB C. ALL RIGHTS RESERVED.</p>
           <div className="mt-4 flex justify-center gap-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/JacobCarmicle" 
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#00d2ff] transition-colors"
@@ -104,7 +104,7 @@ export default function Home() {
               GITHUB
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/jacob-carmicle-79b644260" 
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#00d2ff] transition-colors"

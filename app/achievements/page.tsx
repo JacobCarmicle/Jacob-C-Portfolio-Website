@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 const achievements = [
-  { name: 'REACT MASTER', description: 'Built 10+ React applications', icon: '⚛️', unlocked: true },
-  { name: 'NODE WARRIOR', description: 'Created robust backend APIs', icon: '🟢', unlocked: true },
-  { name: 'TYPE SAFETY', description: 'Mastered TypeScript', icon: '📘', unlocked: true },
-  { name: 'DATABASE HERO', description: 'Worked with MongoDB & PostgreSQL', icon: '🗄️', unlocked: true },
+  { name: 'REACT MASTER', description: 'Built enterprise React apps with TypeScript', icon: '⚛️', unlocked: true },
   { name: 'FULL STACK', description: 'Built complete full-stack applications', icon: '🚀', unlocked: true },
-  { name: 'UI ARTIST', description: 'Designed beautiful user interfaces', icon: '🎨', unlocked: true },
-  { name: 'CODE REVIEWER', description: 'Reviewed 50+ pull requests', icon: '👀', unlocked: false },
-  { name: 'OPEN SOURCE', description: 'Contributed to open source projects', icon: '🌐', unlocked: false },
+  { name: 'CLOUD NATIVE', description: 'Deployed with Azure Container Apps & Docker', icon: '☁️', unlocked: true },
+  { name: 'DATABASE HERO', description: 'Worked with MongoDB & PostgreSQL', icon: '🗄️', unlocked: true },
+  { name: 'SECURITY EXPERT', description: 'Implemented RBAC, JWT, & HIPAA compliance', icon: '🔒', unlocked: true },
+  { name: 'MOBILE DEVELOPER', description: 'Built cross-platform Flutter applications', icon: '📱', unlocked: true },
+  { name: 'MICROSERVICES', description: 'Architected containerized microservices', icon: '🐳', unlocked: true },
+  { name: 'AI INTEGRATOR', description: 'Integrated OpenAI GPT-4 for AI features', icon: '🤖', unlocked: true },
 ]
 
 export default function AchievementsPage() {
@@ -88,7 +88,12 @@ export default function AchievementsPage() {
                   className="h-full bg-gradient-to-r from-[#6c5ce7] to-[#00d2ff] transition-all duration-1000"
                   style={{ width: `${(unlockedCount / achievements.length) * 100}%` }}
                 >
-                  <div className="h-full bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M0 0h40v40H0z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+                  <div 
+                    className="h-full opacity-20"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 0h40v40H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                    }}
+                  ></div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center text-xs text-[#00d2ff]">
                   {Math.round((unlockedCount / achievements.length) * 100)}%
