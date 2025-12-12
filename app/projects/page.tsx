@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { projects } from '../data/projects'
 
 export default function ProjectsPage() {
@@ -42,25 +43,52 @@ export default function ProjectsPage() {
               >
                 {/* Arcade Cabinet Screen */}
                 <div className="h-64 bg-gradient-to-b from-[#0f0f1e] to-[#1a1a2e] border-b-4 border-[#4a4a6a] relative overflow-hidden">
-                  {/* Screen glow */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#6c5ce7]/20 to-transparent"></div>
-                  
-                  {/* Screen content */}
-                  <div className="relative h-full flex flex-col items-center justify-center p-4">
-                    <div className="text-center">
-                      <h3 className="text-lg md:text-xl mb-2 text-[#00d2ff] pixel-text">
-                        {project.title.toUpperCase()}
-                      </h3>
-                      <div className="h-24 w-full bg-[#0f0f1e] border-2 border-[#4a4a6a] flex items-center justify-center mb-4">
-                        <span className="text-4xl">🕹️</span>
+                  {(project.imageUrls && project.imageUrls.length > 0) || project.imageUrl ? (
+                    <>
+                      <Image
+                        src={project.imageUrls?.[0] || project.imageUrl || ''}
+                        alt={`${project.title} preview`}
+                        fill
+                        className="object-cover"
+                        style={{ objectFit: 'cover' }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#6c5ce7]/20 to-transparent"></div>
+                      <div className="absolute top-2 left-2">
+                        {project.featured && (
+                          <span className="inline-block px-2 py-1 bg-[#ffd93d] text-[#0f0f1e] text-xs">
+                            FEATURED
+                          </span>
+                        )}
                       </div>
-                      {project.featured && (
-                        <span className="inline-block px-2 py-1 bg-[#ffd93d] text-[#0f0f1e] text-xs">
-                          FEATURED
-                        </span>
-                      )}
-                    </div>
-                  </div>
+                      <div className="absolute bottom-2 left-0 right-0 text-center">
+                        <h3 className="text-sm md:text-base text-[#00d2ff] pixel-text drop-shadow-lg">
+                          {project.title.toUpperCase()}
+                        </h3>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Screen glow */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#6c5ce7]/20 to-transparent"></div>
+                      
+                      {/* Screen content */}
+                      <div className="relative h-full flex flex-col items-center justify-center p-4">
+                        <div className="text-center">
+                          <h3 className="text-lg md:text-xl mb-2 text-[#00d2ff] pixel-text">
+                            {project.title.toUpperCase()}
+                          </h3>
+                          <div className="h-24 w-full bg-[#0f0f1e] border-2 border-[#4a4a6a] flex items-center justify-center mb-4">
+                            <span className="text-4xl">🕹️</span>
+                          </div>
+                          {project.featured && (
+                            <span className="inline-block px-2 py-1 bg-[#ffd93d] text-[#0f0f1e] text-xs">
+                              FEATURED
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  )}
 
                   {/* Screen bezel */}
                   <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-[#4a4a6a] to-transparent"></div>

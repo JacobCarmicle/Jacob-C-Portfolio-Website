@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { projects } from '../../data/projects'
 import { notFound } from 'next/navigation'
+import ImageSlideshow from '../../components/ImageSlideshow'
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
   const project = projects.find(p => p.slug === params.slug)
@@ -8,6 +9,9 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
   if (!project) {
     notFound()
   }
+
+  // Get images array - prefer imageUrls, fallback to imageUrl as single-item array
+  const images = project.imageUrls || (project.imageUrl ? [project.imageUrl] : [])
 
   return (
     <div className="min-h-screen bg-[#1a1a2e] relative">
@@ -45,13 +49,19 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 )}
               </div>
 
-              {/* Game Display Area */}
-              <div className="bg-[#0f0f1e] border-4 border-[#4a4a6a] h-64 mb-8 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#6c5ce7]/20 to-[#00d2ff]/20"></div>
-                <div className="relative z-10 text-center">
-                  <div className="text-6xl mb-4">🕹️</div>
-                  <div className="text-xs text-[#4a4a6a]">GAME PREVIEW</div>
-                </div>
+              {/* Game Display Area - Slideshow or Single Image */}
+              <div className="mb-8">
+                {images.length > 0 ? (
+                  <ImageSlideshow images={images} title={project.title} />
+                ) : (
+                  <div className="bg-[#0f0f1e] border-4 border-[#4a4a6a] h-64 flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#6c5ce7]/20 to-[#00d2ff]/20"></div>
+                    <div className="relative z-10 text-center">
+                      <div className="text-6xl mb-4">🕹️</div>
+                      <div className="text-xs text-[#4a4a6a]">GAME PREVIEW</div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Game Info */}
